@@ -1,3 +1,3 @@
-#Kinosearch
+# Kinosearch
 
-[Kinosearch](https://gashusalpagarov.github.io/kinosearch/)
+[Demo](https://gashusalpagarov.github.io/kinosearch/)
