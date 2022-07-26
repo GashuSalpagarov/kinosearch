@@ -71,6 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const { search } = Object.fromEntries(urlSearchParams.entries());
     const input = document.getElementById('search-form-input');
 
+    if(!search) return;
     input.value = search;
     onSearch(search);
 });
