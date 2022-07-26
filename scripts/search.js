@@ -29,17 +29,13 @@ const renderMovies = (movies) => {
     });
 };
 
-
-const onSearchFormSubmit = async (e) => {
-    e.preventDefault();
-
-    const input = e.target[0];
-    const value = input.value;
-    const button = e.target[1];
+const onSearch = async (value) => {
+    const input = document.getElementById('search-form-input');
+    const button = document.getElementById('search-form-btn');
     const spinner = document.getElementById('search-spinner');
     const searchResult = document.getElementById('search-result');
     const searchNotFound = document.getElementById('search-not-found');
-    
+
     searchResult.innerHTML = '';
 
     input.setAttribute('disabled', true);
@@ -57,5 +53,24 @@ const onSearchFormSubmit = async (e) => {
     spinner.classList.add('d-none');
 }
 
+
+const onSearchFormSubmit = async (e) => {
+    e.preventDefault();
+
+    const input = e.target[0];
+    const value = input.value;
+    onSearch(value);
+}
+
 const searchForm = document.getElementById('search-form');
 searchForm.addEventListener('submit', onSearchFormSubmit)
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const urlSearchParams = new URLSearchParams(window.location.search);
+    const { search } = Object.fromEntries(urlSearchParams.entries());
+    const input = document.getElementById('search-form-input');
+
+    input.value = search;
+    onSearch(search);
+});

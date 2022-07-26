@@ -4,7 +4,7 @@
 
 #search-result {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
     /* grid-template-rows: 1fr 1fr 1fr;  */
     gap: 1em 1em; 
 }
@@ -24,4 +24,22 @@
     height: 100%;
     width: 100%;
     object-fit: cover;
+}
+
+@media screen and (max-width: 1024px) {
+    #search-result {
+        grid-template-columns: 1fr 1fr 1fr; 
+    }
+}
+
+@media screen and (max-width: 575px) {
+    #search-result {
+        grid-template-columns: 1fr 1fr; 
+    }
+}
+
+@media screen and (max-width: 425px) {
+    #search-result {
+        /* grid-template-columns: 1fr;  */
+    }
 }
