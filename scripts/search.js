@@ -12,12 +12,12 @@ const searchMovies = async (value) => {
 const renderMovies = (movies) => {
     const searchResult = document.getElementById('search-result');
 
-    movies.forEach(({ title, description, image }) => {
+    movies.forEach(({ title, description, image, id }) => {
         const movieCard = `
             <div class="card">
-                <div class="card-img-wrapper">
+                <a href="./title.html?titleId=${id}" target="_blank" class="card-img-wrapper">
                     <img src="${image}" class="card-img-top" alt="${title}">
-                </div>
+                </a>
                 <div class="card-body">
                     <h5 class="card-title">${title}</h5>
                     <p class="card-text">${description}</p>

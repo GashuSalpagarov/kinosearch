@@ -12,3 +12,40 @@
     height: 100%;
     object-fit: cover;
 }
+
+.actor-image-wrapper,
+.similar-image-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+}
+
+.actor-image-wrapper .card-img-top,
+.similar-image-wrapper .card-img-top {
+    position: absolute;
+    top: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    height: auto;
+}
+
+.title__trailer {
+    height: 50vw;
+    width: 70vw;
+}
+
+@media screen and (max-width: 767px) {
+    .title__poster {
+        width: 100%;
+    }
+
+    .title__trailer {
+        height: 60vw;
+        width: 90vw;
+    }
+    
+}
