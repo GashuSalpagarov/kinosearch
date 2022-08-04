@@ -31,16 +31,12 @@ const renderTitles = (container, array) => {
 const spinner = document.getElementById('search-spinner');
 const pageContent = document.querySelector('.page-content');
 
-const top250MoviesContainer = document.getElementById('top-250-movies');
-const top250TVsContainer = document.getElementById('top-250-tvs');
-
+const top250MoviesContainer = document.getElementById('top-250-movies')
 
 const initPage = async () => {
     const movies = await fetchTitles('/Top250Movies/');
-    const tvs = await fetchTitles('/Top250TVs/');
 
-    renderTitles(top250MoviesContainer, movies.splice(0, 10));
-    renderTitles(top250TVsContainer, tvs.splice(0, 10));
+    renderTitles(top250MoviesContainer, movies);
 
     spinner.classList.add('d-none');
     pageContent.classList.remove('d-none');
